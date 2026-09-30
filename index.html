@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AMLR BRAND — premium streetwear and everyday essentials.">
+  <title>AMLR BRAND — Premium Streetwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;background:#0b0b0b;color:#f7f3ea;line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.94);backdrop-filter:blur(14px);border-bottom:1px solid #252525}
+    .navin{max-width:1180px;margin:auto;height:76px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:2px}
+    .brand img{width:52px;height:52px;object-fit:contain}
+    .links{display:flex;gap:28px;font-size:14px;color:#d6d1c7}
+    .links a:hover{color:#e7bd68}
+    .cart{border:1px solid #3a3a3a;padding:9px 14px;border-radius:999px;font-size:13px}
+    .hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:80px 20px;background:
+      radial-gradient(circle at 50% 35%,rgba(190,145,58,.17),transparent 34%),
+      linear-gradient(180deg,#111 0%,#0b0b0b 100%)}
+    .hero-logo{width:min(330px,70vw);margin-bottom:22px}
+    .eyebrow{color:#d9ae5b;letter-spacing:4px;font-size:12px;font-weight:700;margin-bottom:12px}
+    h1{font-size:clamp(38px,7vw,76px);line-height:1.02;letter-spacing:-2px}
+    .hero p{max-width:610px;margin:20px auto 30px;color:#bcb7ae;font-size:16px}
+    .btn{display:inline-block;background:#d9ae5b;color:#111;padding:14px 24px;border-radius:5px;font-weight:800;font-size:14px}
+    .btn:hover{background:#efca82}
+    .section{max-width:1180px;margin:auto;padding:82px 20px}
+    .title{text-align:center;margin-bottom:38px}
+    .title span{display:block;color:#d9ae5b;font-size:12px;letter-spacing:3px;font-weight:700;margin-bottom:8px}
+    .title h2{font-size:34px}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#141414;border:1px solid #262626;border-radius:10px;overflow:hidden}
+    .pic{aspect-ratio:1/1;background:linear-gradient(145deg,#202020,#0e0e0e);display:grid;place-items:center}
+    .pic .mock{width:58%;aspect-ratio:4/5;border-radius:8px;background:#e9e5dc;display:grid;place-items:center;color:#111;font-size:12px;font-weight:800;letter-spacing:2px;box-shadow:0 15px 35px rgba(0,0,0,.35)}
+    .info{padding:18px}
+    .info h3{font-size:17px;margin-bottom:5px}
+    .price{color:#e3bd72;font-weight:800;margin-bottom:15px}
+    .buy{width:100%;border:1px solid #4a4a4a;background:transparent;color:#fff;padding:11px;border-radius:5px;cursor:pointer;font-weight:700}
+    .buy:hover{border-color:#d9ae5b;color:#d9ae5b}
+    .about{background:#111;border-top:1px solid #202020;border-bottom:1px solid #202020}
+    .aboutin{max-width:850px;margin:auto;text-align:center}
+    .about p{color:#aaa49a;margin-top:15px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .box{background:#141414;border:1px solid #272727;border-radius:10px;padding:25px}
+    .box h3{margin-bottom:8px}
+    .box p{color:#aaa49a}
+    footer{border-top:1px solid #242424;padding:30px 20px;text-align:center;color:#777;font-size:13px}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
+    .modal.show{display:flex}
+    .modalbox{width:min(460px,100%);background:#151515;border:1px solid #333;border-radius:12px;padding:25px}
+    .modalbox h3{margin-bottom:8px}
+    .modalbox p{color:#aaa;margin-bottom:18px}
+    input,select{width:100%;padding:12px;margin:6px 0 10px;background:#0d0d0d;border:1px solid #333;color:#fff;border-radius:5px}
+    .close{float:right;cursor:pointer;color:#aaa;font-size:20px}
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:#25d366;color:#071b0e;padding:13px 17px;border-radius:999px;font-weight:800;box-shadow:0 8px 30px rgba(0,0,0,.35);z-index:30}
+    @media(max-width:800px){.links{display:none}.products{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}.hero{min-height:590px}}
+    @media(max-width:520px){.products{grid-template-columns:1fr}.navin{height:68px}.brand img{width:46px;height:46px}}
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="#home"><img src="logo.webp" alt="AMLR BRAND logo"><span>AMLR</span></a>
+    <nav class="links">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="cart" href="#shop">Shop Now</a>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div>
+    <img class="hero-logo" src="logo.webp" alt="AMLR BRAND">
+    <div class="eyebrow">PREMIUM STREETWEAR</div>
+    <h1>WEAR YOUR<br>IDENTITY.</h1>
+    <p>Clean silhouettes. Premium attitude. AMLR BRAND is built for everyday streetwear with a refined edge.</p>
+    <a class="btn" href="#shop">EXPLORE COLLECTION</a>
+  </div>
+</section>
+
+<section id="shop" class="section">
+  <div class="title"><span>THE COLLECTION</span><h2>Featured T-Shirts</h2></div>
+  <div class="products">
+    <article class="card"><div class="pic"><div class="mock">AMLR<br>ESSENTIAL</div></div><div class="info"><h3>AMLR Essential Tee</h3><div class="price">₹799</div><button class="buy" onclick="openOrder('AMLR Essential Tee','799')">BUY NOW</button></div></article>
+    <article class="card"><div class="pic"><div class="mock">AMLR<br>CLASSIC</div></div><div class="info"><h3>AMLR Classic Tee</h3><div class="price">₹899</div><button class="buy" onclick="openOrder('AMLR Classic Tee','899')">BUY NOW</button></div></article>
+    <article class="card"><div class="pic"><div class="mock">AMLR<br>STREET</div></div><div class="info"><h3>AMLR Street Tee</h3><div class="price">₹999</div><button class="buy" onclick="openOrder('AMLR Street Tee','999')">BUY NOW</button></div></article>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="section aboutin">
+    <div class="title"><span>OUR STORY</span><h2>AMLR BRAND</h2></div>
+    <p>AMLR BRAND is a premium clothing label focused on modern T-shirts, clean design and confident streetwear. This section can be replaced with your final brand story.</p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="title"><span>GET IN TOUCH</span><h2>Contact</h2></div>
+  <div class="contact">
+    <div class="box"><h3>WhatsApp Orders</h3><p>Replace the number in the website code with your WhatsApp number. Customers can then send their order directly.</p></div>
+    <div class="box"><h3>Customer Support</h3><p>Email: your-email@example.com<br>Instagram: @yourhandle</p></div>
+  </div>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">WhatsApp Order</a>
+
+<div id="modal" class="modal">
+  <div class="modalbox">
+    <span class="close" onclick="closeOrder()">×</span>
+    <h3 id="productName">Place Order</h3>
+    <p>Fill your details. This demo currently prepares the order for WhatsApp.</p>
+    <input id="name" placeholder="Full name">
+    <input id="phone" placeholder="Phone number">
+    <input id="address" placeholder="Delivery address">
+    <select id="size"><option value="">Select size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+    <button class="btn" style="border:0;width:100%;cursor:pointer" onclick="sendOrder()">SEND ORDER ON WHATSAPP</button>
+  </div>
+</div>
+
+<footer>© 2026 AMLR BRAND. All rights reserved.</footer>
+
+<script>
+let selectedProduct='',selectedPrice='';
+function openOrder(product,price){
+  selectedProduct=product; selectedPrice=price;
+  document.getElementById('productName').textContent=product+' — ₹'+price;
+  document.getElementById('modal').classList.add('show');
+}
+function closeOrder(){document.getElementById('modal').classList.remove('show')}
+function sendOrder(){
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const address=document.getElementById('address').value.trim();
+  const size=document.getElementById('size').value;
+  if(!name||!phone||!address||!size){alert('Please fill all details.');return}
+  const msg=`AMLR BRAND Order%0AProduct: ${selectedProduct}%0APrice: ₹${selectedPrice}%0ASize: ${size}%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+  window.open('https://wa.me/919999999999?text='+msg,'_blank');
+}
+</script>
+</body>
+</html>
